@@ -1,5 +1,13 @@
 import sqlite3
 
+
+######################################################################
+### Attention: there are UIs for dealing with the sql databases.   ###
+### They are for example 'sqlitebrowser'. In this script, however, ###
+### we overview the most important commands using the pymongo API. ###
+######################################################################
+
+
 # setting up the name of the database
 database_file = "words_database.db"
 
@@ -30,9 +38,9 @@ conn = sqlite3.connect(database_file)
 # cursor that intermediates all operation in the database
 c = conn.cursor()
 # insert word0, word1 and word2 into the database
-word0 = 'ele'
-word1 = 'ameixa'
-word2 = 'cadeira'
+word0 = "ele"
+word1 = "ameixa"
+word2 = "cadeira"
 c.execute("INSERT INTO words VALUES (?, ?, ?)", (word0, word1, word2))
 # commit and close connection
 conn.commit()
@@ -47,11 +55,11 @@ conn = sqlite3.connect(database_file)
 # cursor that intermediates all operation in the database
 c = conn.cursor()
 # select rows which have the word='ele' in the first column
-word = 'ele'
+word = "ele"
 c.execute('SELECT * FROM words WHERE w0="{0}"'.format(word))
 # retrieve all results. Also, one could use the method '.fetchone()',
 # which would retrieve only the first row corresponding to the search
-retrieved_tuple = c.fetchall() 
+retrieved_tuple = c.fetchall()
 # commit and close connection
 conn.commit()
 conn.close()

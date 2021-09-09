@@ -1,15 +1,23 @@
-#%%
 from pymongo import MongoClient
+
+
+########################################################################
+### Attention: there are UIs for dealing with the mongodb databases. ###
+### They are for example 'Robo3t' and 'MongodbCompass'. In this      ###
+### script, however, we overview the most important commands using   ###
+### the pymongo API.                                                 ###
+########################################################################
+
 
 # connecting to the cluster already installed
 # in the machine or in the cloud server.
-# For installation of the mongodb service, 
+# For installation of the mongodb service,
 # check out the following links:
 # https://www.youtube.com/watch?v=yB5EWH5_XmA&ab_channel=TerminalRoot
 # https://terminalroot.com.br/2020/02/mongodb.html
 # For Ubuntu 20.04 users, follow the installation described in the website,
 # however pay attention to the creation and permissions of the database /data/db folder,
-# because otherwise the mongodb service cannot start very well. The instructions for 
+# because otherwise the mongodb service cannot start very well. The instructions for
 # the creation and permissions of this folder are at the gentoo part right above
 # the Ubuntu 20.04 installation steps.
 cluster = MongoClient("localhost:27017")
@@ -40,7 +48,7 @@ collection.insert_one(document3)
 ############################################
 
 # find documents according to some key
-results_object = collection.find({"name":"myname"})
+results_object = collection.find({"name": "myname"})
 results_list = list(results_object)
 # find all documents in a collection
 results_object = collection.find({})
