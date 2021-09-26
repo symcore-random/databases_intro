@@ -21,7 +21,7 @@ from helpers import check_if_connection_is_open
 # because otherwise the mongodb service cannot start very well. The instructions for
 # the creation and permissions of this folder are at the gentoo part right above
 # the Ubuntu 20.04 installation steps.
-mongo_path = "localhost:9000"
+mongo_path = "mongodb://localhost:9000"
 cluster = MongoClient(mongo_path, serverSelectionTimeoutMS=2000)
 # check if connection was succesful
 check_if_connection_is_open(cluster)
@@ -65,8 +65,3 @@ results_list = list(results_object)
 # One can also delete, update, count documents, etc.
 # However this little introduction might be sufficient
 # for general purposes.
-
-# %%
-with open("dsdsdsad") as f:
-    pass
-# %%
