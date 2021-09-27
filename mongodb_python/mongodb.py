@@ -13,7 +13,7 @@ from helpers import check_if_connection_is_open
 # connecting to the cluster already installed
 # in the machine or in the cloud server.
 # For installation of the mongodb service,
-# check out the following links:
+# check out the following links (in portuguese):
 # https://www.youtube.com/watch?v=yB5EWH5_XmA&ab_channel=TerminalRoot
 # https://terminalroot.com.br/2020/02/mongodb.html
 # For Ubuntu 20.04 users, follow the installation described in the website,
@@ -21,6 +21,9 @@ from helpers import check_if_connection_is_open
 # because otherwise the mongodb service cannot start very well. The instructions for
 # the creation and permissions of this folder are at the gentoo part right above
 # the Ubuntu 20.04 installation steps.
+# Another way to establish a mongodb connection is to run a mongodb docker image:
+# To download the image: docker pull mongo
+# To run the image: docker run -p [ANY PORT]:27017 mongo
 mongo_path = "mongodb://localhost:9000"
 cluster = MongoClient(mongo_path, serverSelectionTimeoutMS=2000)
 # check if connection was succesful
